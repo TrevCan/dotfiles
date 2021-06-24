@@ -55,3 +55,9 @@ xinput set-prop 12 "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 100000
 
 #copy of xinitrc ends here
 # *************************88
+
+
+
+#PS1 stuff 
+export PS1="\[\033[38;5;82m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;13m\]\h\[$(tput sgr0)\] \W\n\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;122m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+
