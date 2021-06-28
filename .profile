@@ -26,7 +26,5 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# this https://www.reddit.com/r/vim/comments/nn5hey/what_are_the_most_popular_key_remappings_caps/gzt83yn?utm_source=share&utm_medium=web2x&context=3
 
-setxkbmap -option "ctrl:nocaps"
-xcape -e 'Control_L=Escape'
+

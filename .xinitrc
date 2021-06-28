@@ -1,5 +1,6 @@
 # swap escape and caps lock keys
-setxkbmap -option caps:swapescape
+# 	setxkbmap -option caps:swapescape
+# not needed since it's already in ~/.profile
 
 # TouchPad sensitivity config
 # See http://archive.today/Z2LoK answer #3 (user Daniel M)
@@ -17,7 +18,11 @@ synclient VertTwoFingerScroll=1
 synclient VertScrollDelta=250
 synclient HorizScrollDelta=250
 xinput set-prop 12 "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 100000
-
 #am i supposed to run this? idk dude
 # xinput --set-prop 11 "Synaptics Scrolling Distance" 350 350
 
+# Caps Lock to Ctrl while held and Esc when released
+# # https://archive.is/Dd9H5#35%
+# # [archive.today link](https://archive.is/Dd9H5#35%)
+setxkbmap -option "ctrl:nocaps"
+xcape -e 'Control_L=Escape'
