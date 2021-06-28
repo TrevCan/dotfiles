@@ -3,6 +3,7 @@ setxkbmap -option caps:swapescape
 
 # TouchPad sensitivity config
 # See http://archive.today/Z2LoK answer #3 (user Daniel M)
+# Basically what I'm doing here is settings up the touchpad to work when resting my palm, apparently on some computers the PalmDetect setting doesn't work, so essentially it's just making the mouse to move very slow, since I just want to use circular scrolling and vertical scrolling.
 xinput set-prop 12 "Synaptics Noise Cancellation" 20 20
 xinput set-prop 12 "Synaptics Finger" 50 50 255
 synclient PalmDetect=1

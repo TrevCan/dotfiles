@@ -66,6 +66,8 @@ xinput set-prop 12 "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 100000
 
 
 
-#PS1 stuff 
+#PS1 stuff login stuff
+# eg. trev@computer ~
+# $ blablabla and colors
 export PS1="\[\033[38;5;82m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;13m\]\h\[$(tput sgr0)\] \W\n\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;122m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
