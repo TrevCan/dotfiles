@@ -1,3 +1,4 @@
+#!/bin/bash
 # set trackpoint/mouse preferences, see: https://www.x.org/wiki/Development/Documentation/PointerAcceleration/# (Basic useage SECTION)
 xset m 16/10 0
 
@@ -43,7 +44,7 @@ synclient HorizScrollDelta=250
 synclient VertEdgeScroll=0
 synclient HorizEdgeScroll=0
 synclient CornerCoasting=0
-synclient VertTwoFingerScroll=1
+synclient VertTwoFingerScroll=0
 synclient HorizTwoFingerScroll=0
 synclient MinSpeed=1
 synclient MaxSpeed=1.75
