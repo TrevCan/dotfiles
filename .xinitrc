@@ -1,4 +1,20 @@
-#!/bin/bash
+#!/bin/bash 
+# exec plasma_session 
+#WM=i3
+
+#if [ "$1" != "test" ]; then
+#	exec $WM
+#fi
+
+
+# Caps Lock to Ctrl while held and Esc when released
+# https://archive.is/Dd9H5#35%
+# [archive.today link](https://archive.is/Dd9H5#35%)
+setxkbmap -option "ctrl:nocaps"
+xcape -e 'Control_L=Escape'
+
+
+
 # set trackpoint/mouse preferences, see: https://www.x.org/wiki/Development/Documentation/PointerAcceleration/# (Basic useage SECTION)
 xset m 16/10 0
 
@@ -20,9 +36,15 @@ xset m 16/10 0
 		# synaptics props:
 
 		# Basically what I'm doing here is settings up the touchpad to work when resting my palm, apparently on some computers the PalmDetect setting doesn't work, so essentially it's just making the mouse to move very slow, since I just want to use circular scrolling and vertical scrolling.
-xinput set-prop 12 "Synaptics Noise Cancellation" 20 20
-xinput set-prop 12 "Synaptics Finger" 50 50 255
-xinput set-prop 12 "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 100000
+
+# since TouchPad ID is not persistent in `xinput` I decided to retrieve it every time because
+# why not
+TOUCHPAD_ID=$(xinput | grep 'TouchPad' | cut -c 55-56)
+
+
+xinput set-prop $TOUCHPAD_ID "Synaptics Noise Cancellation" 20 20
+xinput set-prop $TOUCHPAD_ID "Synaptics Finger" 50 50 255
+xinput set-prop $TOUCHPAD_ID "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 100000
 
 # Parameter settings:
 synclient LeftEdge=1574
@@ -75,7 +97,7 @@ synclient PressureMotionMinZ=30
 synclient PressureMotionMaxZ=160
 synclient PressureMotionMinFactor=1
 synclient PressureMotionMaxFactor=1
-synclient ResolutionDetect=1
+# synclient ResolutionDetect=1
 synclient GrabEventDevice=0
 synclient TapAndDragGesture=0
 synclient AreaLeftEdge=0
@@ -94,8 +116,4 @@ synclient MiddleButtonAreaRight=0
 synclient MiddleButtonAreaTop=0
 synclient MiddleButtonAreaBottom=0
 
-# Caps Lock to Ctrl while held and Esc when released
-# # https://archive.is/Dd9H5#35%
-# # [archive.today link](https://archive.is/Dd9H5#35%)
-setxkbmap -option "ctrl:nocaps"
-xcape -e 'Control_L=Escape'
+
