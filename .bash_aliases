@@ -57,3 +57,15 @@ alias carl="cal -3"
 # source: https://news.ycombinator.com/item?id=27615516
 export PS1="\[\033[38;5;82m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;13m\]\h\[$(tput sgr0)\] \W\n\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;122m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
+alias zoom="/home/trevor/Downloads/zoom/opt/zoom/ZoomLauncher"
+
+alias bashtop="bpytop"
+alias top="bpytop"
+alias nosucc="cd ~/Downloads/suckless"
+
+# https://github.com/raylee/tldr-sh-client
+# tldr completion 
+complete -W "$(tldr 2>/dev/null --list)" tldr
+
+
+# ./.xinitrc test

@@ -116,4 +116,4 @@ synclient MiddleButtonAreaRight=0
 synclient MiddleButtonAreaTop=0
 synclient MiddleButtonAreaBottom=0
 
-
+# bluetoothctl power on
