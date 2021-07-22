@@ -1,5 +1,5 @@
-#!/bin/bash 
-# exec plasma_session 
+#!/bin/bash
+# exec plasma_session
 #WM=i3
 
 #if [ "$1" != "test" ]; then
@@ -117,3 +117,7 @@ synclient MiddleButtonAreaTop=0
 synclient MiddleButtonAreaBottom=0
 
 # bluetoothctl power on
+
+
+# dual monitor setup
+xrandr --output HDMI2 --auto --right-of eDP1
