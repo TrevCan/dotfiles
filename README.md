@@ -1,7 +1,3 @@
-Buenas  hola Alex
-
-
-
 # dotfiles
 TrevCan's config files. Below is an explanation on how anyone can set up their one repo.
 
