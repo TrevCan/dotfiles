@@ -10,8 +10,9 @@
 # Caps Lock to Ctrl while held and Esc when released
 # https://archive.is/Dd9H5#35%
 # [archive.today link](https://archive.is/Dd9H5#35%)
-setxkbmap -option "ctrl:nocaps"
-xcape -e 'Control_L=Escape'
+# setxkbmap -option "ctrl:nocaps"
+# xcape -e 'Control_L=Escape'
+# moved to ~/.local/bin/remaps
 
 
 
