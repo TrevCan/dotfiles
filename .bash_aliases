@@ -27,7 +27,7 @@ alias kat="batcat"
 
 source /usr/share/bash-completion/completions/git
 
-alias dotrep="/usr/bin/git --git-dir=$HOME/.files --work-tree=$HOME/"
+alias dotrep="/usr/bin/git --git-dir=$HOME/.files.git --work-tree=$HOME/"
 alias dotfiles='dotrep'
 
 
