@@ -35,3 +35,4 @@ alias duckduckgo=ddgr
 
 source .bashrc
 source .bash_aliases
+. "/home/trevorlarbs/.local/share/cargo/env"
