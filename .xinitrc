@@ -43,9 +43,9 @@ xset m 16/10 0
 TOUCHPAD_ID=$(xinput | grep 'TouchPad' | cut -c 55-56)
 
 
-xinput set-prop $TOUCHPAD_ID "Synaptics Noise Cancellation" 20 20
-xinput set-prop $TOUCHPAD_ID "Synaptics Finger" 50 50 255
-xinput set-prop $TOUCHPAD_ID "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 100000
+ xinput set-prop $TOUCHPAD_ID "Synaptics Noise Cancellation" 20 20
+ xinput set-prop $TOUCHPAD_ID "Synaptics Finger" 50 50 255
+ xinput set-prop $TOUCHPAD_ID "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 100000
 
 # Parameter settings:
 synclient LeftEdge=1574
@@ -86,8 +86,9 @@ synclient ClickFinger1=1
 synclient ClickFinger2=3
 synclient ClickFinger3=0
 synclient CircularScrolling=1
-synclient CircScrollDelta=0.1
-synclient CircScrollTrigger=3
+# fast, very sensitive, I like it like that.
+synclient CircScrollDelta=0.055
+synclient CircScrollTrigger=0
 synclient CircularPad=1
 synclient PalmDetect=1
 synclient PalmMinWidth=5
@@ -117,7 +118,17 @@ synclient MiddleButtonAreaRight=0
 synclient MiddleButtonAreaTop=0
 synclient MiddleButtonAreaBottom=0
 
+# for some weird reason, palm detection sucks
+# so syndaemon is a good alternative to disable the touchpad while typing
+# -i means how much time to wait to re-enable touchpad after being de-activated
+# -t says don't disable mouse movements, just touchpad taps and scrolls
+# -K ignore modifier keys and mod key combos
+# -R no idea, something to do with XRecord don't really understand
+# -d run as daemon
+syndaemon -i 0.5 -t -K -R -d
 # bluetoothctl power on
+
+# udevmon -c /etc/interception/udevmon.yaml
 
 
 # dual monitor setup
