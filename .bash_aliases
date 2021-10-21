@@ -58,7 +58,7 @@ alias carl="cal -3"
 # source: https://news.ycombinator.com/item?id=27615516
 # export PS1="\[\033[38;5;82m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;13m\]\h\[$(tput sgr0)\] \W\n\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;122m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
-alias zoom="/home/trevor/Downloads/zoom/opt/zoom/ZoomLauncher"
+alias zoom="~/Documents/TEC5/newzoom/opt/zoom/ZoomLauncher"
 
 alias bashtop="bpytop"
 alias top="bpytop"

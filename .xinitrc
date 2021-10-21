@@ -133,3 +133,7 @@ syndaemon -i 0.5 -t -K -R -d
 
 # dual monitor setup
 xrandr --output HDMI2 --auto --right-of eDP1
+
+
+# gpg stuff idk
+
