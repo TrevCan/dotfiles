@@ -45,7 +45,8 @@ TOUCHPAD_ID=$(xinput | grep 'TouchPad' | cut -c 55-56)
 
  xinput set-prop $TOUCHPAD_ID "Synaptics Noise Cancellation" 20 20
  xinput set-prop $TOUCHPAD_ID "Synaptics Finger" 50 50 255
- xinput set-prop $TOUCHPAD_ID "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 100000
+ # why not comment it out
+# xinput set-prop $TOUCHPAD_ID "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 100000
 
 # Parameter settings:
 synclient LeftEdge=1574
