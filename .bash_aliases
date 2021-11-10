@@ -25,7 +25,8 @@ alias kat="batcat"
 #git alias for 'dotfiles' github repo
 # github.com/trevcan/dotfiles
 
-source /usr/share/bash-completion/completions/git
+# for bash only!
+# source /usr/share/bash-completion/completions/git
 
 alias dotrep="/usr/bin/git --git-dir=$HOME/.files.git --work-tree=$HOME/"
 alias dotfiles='dotrep'
@@ -36,11 +37,14 @@ alias dotfiles='dotrep'
 # new autocomplete git: https://stackoverflow.com/a/24665529
 # by DylanYoung Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 # Main git completions (prior to git 2.30, you an use _git instead of __git_main)
-__git_complete dotrep __git_main
+# this is for bash only!!, for zsh see idk 
+# __git_complete dotrep __git_main
 # https://creativecommons.org/licenses/by-sa/4.0/
 
 # old autocomplete which did not work:
 	# complete -F _git dotrep
+
+PASSWORD_STORE_CLIP_TIME=''
 
 # pass password manager stuff
 export -p PASSWORD_STORE_CLIP_TIME=10
@@ -66,7 +70,7 @@ alias nosucc="cd ~/Downloads/suckless"
 
 # https://github.com/raylee/tldr-sh-client
 # tldr completion
-complete -W "$(tldr 2>/dev/null --list)" tldr
+# complete -W "$(tldr 2>/dev/null --list)" tldr
 
 
 # ./.xinitrc test
