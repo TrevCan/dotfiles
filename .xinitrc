@@ -126,7 +126,9 @@ synclient MiddleButtonAreaBottom=0
 # -K ignore modifier keys and mod key combos
 # -R no idea, something to do with XRecord don't really understand
 # -d run as daemon
-syndaemon -i 0.5 -t -K -R -d
+# syndaemon -i 0.5 -t -K -R -d
+# syndaemon -i 0.5 -K -R -d
+# syndaemon is now in ~/.xprofile
 # bluetoothctl power on
 
 # udevmon -c /etc/interception/udevmon.yaml
