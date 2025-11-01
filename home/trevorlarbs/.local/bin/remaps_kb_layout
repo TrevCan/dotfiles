@@ -1,0 +1,6 @@
+#!/bin/sh
+# author: trevcan
+
+INP=$(cat ~/.local/bin/kblayouts | dmenu -i)
+SELECTED_KB=$(echo $INP | awk '{print $1;}')
+setxkbmap $SELECTED_KB

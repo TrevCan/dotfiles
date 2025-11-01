@@ -1,0 +1,62 @@
+#!/bin/zsh
+#
+
+
+alias bluetoothctl=/usr/bin/bluetoothctl
+alias bluetooth=/usr/bin/bluetooth
+
+# bluetoothctl show | grep 'Powered' && echo yess !& echo nay
+# exit codes;
+# 0 if bluetooth was off and now 	*is on*
+# 1 if bluetooth was on and now 	*is off*
+
+#if [[ $(bluetoothctl show | grep 'Powered: yes') ]] ;
+#then;
+	#bluetoothctl power off ;
+	#notify-send -u normal -i ~/Pictures/harald-linux.jpg 'bluetooth off' '$ bluetoothctl\npower off'
+	#exit 1;
+#else;
+	#bluetoothctl power on ; 
+	#notify-send -u normal -i ~/Pictures/harald-linux.jpg 'bluetooth on' '$ bluetoothctl\npower on'
+	#exit 0;
+#fi
+#
+
+# if [[ "$(bluetooth)" = "bluetooth = off (software)" ]];
+# then;
+# 	echo its off
+# 
+# 	bluetooth on ;
+# 	bluetoothctl power on &&  \ 
+# 	notify-send -u normal -i ~/Pictures/harald-linux.jpg 'bluetooth on' '$ bluetooth on'
+# 	exit 0;
+# 
+# 
+# else;
+# 	echo its on
+# 
+# 	bluetooth off && \
+# 	notify-send -u normal -i ~/Pictures/harald-linux.jpg 'bluetooth off' '$ bluetooth off'
+# 	exit 1;
+# fi
+
+
+
+
+if [[ "$(/usr/bin/bluetoothctl show | grep 'Powered: yes')" ]];
+then;
+	echo was ON;
+
+	bluetoothctl power off && \
+	notify-send -u normal -i ~/Pictures/harald-linux.jpg 'bluetooth is OFF' 'Power is now OFF. Was previously on.'
+
+else;
+	echo was OFF;
+
+	bluetooth on;
+	bluetoothctl power on && \
+	notify-send -u normal -i ~/Pictures/harald-linux.jpg 'bluetooth is ON' 'Power is now ON. Was previously off.'
+
+fi
+
+

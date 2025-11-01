@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+
+alias bluetoothctl=/usr/bin/bluetoothctl
+alias bluetooth=/usr/bin/bluetooth
+
+if [[ "$(/usr/bin/bluetoothctl show | grep 'Powered: yes')" ]];
+then;
+	notify-send -u normal -i ~/Pictures/harald-linux.jpg '$ bluetooth-show : ' 'bluetooth is ON.'
+
+else;
+	echo was OFF;
+
+	notify-send -u normal -i ~/Pictures/harald-linux.jpg '$ bluetooth-show : ' 'bluetooth is OFF.'
+
+fi
+
+

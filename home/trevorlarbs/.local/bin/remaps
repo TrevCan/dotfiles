@@ -1,0 +1,95 @@
+#!/bin/sh
+
+PROMPT_TEXT="Remap keyboard layout?"
+
+[ "$1" = "-r" ] && timeout 6s prompt "$PROMPT_TEXT" "$HOME/.local/bin/remaps_kb_layout"
+
+# This script is called on startup to remap keys.
+# Increase key speed via a rate change
+# xset r rate 300 50
+
+[ "$?" = "0" ] && notify-send remaps "key speed increased."
+
+exit
+# Map the caps lock key to super...
+# setxkbmap -option capslock:super
+# But when it is pressed only once, treat it as escape.
+# killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape'
+# Map the menu button to right super as well.
+# xmodmap -e 'keycode 135 = Super_R'
+# Turn off the caps lock if on since there is no longer a key for it.
+# xset -q | grep "Caps Lock:\s*on" && xdotool key Caps_Lock
+
+
+# reset keybinginds, it'll mess up the tab key (presses like 5 tabs at a time) unless it is run
+# source https://askubuntu.com/questions/29603/how-do-i-clear-xmodmap-settings
+	setxkbmap
+	setxkbmap
+
+# ignore this
+#	xmodmap -e ""
+
+# map CapsLock key to Esc when released, Ctrl while pressed.
+	setxkbmap -option "ctrl:nocaps"
+	xcape -e 'Control_L=Escape'
+
+
+
+# Turn TAB key into Tab when released, Meta (WIndows key) while pressed
+
+	spare_mod="Hyper_L"
+	xmodmap -e "keycode 23 = $spare_mod"
+		# keycode 23 = TAB key
+	xmodmap -e "remove mod4 = $spare_mod"
+	 # does not work
+	 # xmodmap -e "add Super = $spare_mod"
+	xmodmap -e "keycode 133 = $spare_mod"
+		# keycode 133 = Mod key
+	xmodmap -e "keycode any = Tab"	# 'Tab' is case sensitive
+	xcape -e "$spare_mod=Tab" 	# 'Tab' is case sensitive
+
+
+	# done using xcape's examples from its man page xcape(1)
+
+	# excerpt from xcape(1), EXAMPLES section:
+			# EXAMPLES
+			#        Make  Left  Shift  generate Escape when
+			#        pressed and released on it's  own,  and
+			#        Left  Control  generate Ctrl-O combina‐
+			#        tion when pressed and released on  it's
+			#        own:
+			#               xcape   -e  'Shift_L=Escape;Con‐
+			#               trol_L=Control_L|O'
+			#
+			#        In conjugation with xmodmap it is  pos‐
+			#        sible to make an ordinary key act as an
+			#        extra modifier. First map  the  key  to
+			#        the  modifier with xmodmap and then the
+			#        modifier back to the key with xcape. As
+			#        an  example,  we can make the space bar
+			#        work as an  additional  ctrl  key  when
+			#        held  with  the  following  sequence of
+			#        commands:
+			#
+			#        First, map an unused modifier's  keysym
+			#        to the spacebar's keycode and make it a
+			#        control modifier. It needs to be an ex‐
+			#        isting  key  so  that emacs won't spazz
+			#        out when you press  it.  Hyper_L  is  a
+			#        good candidate.
+			#
+			#               spare_modifier="Hyper_L"
+			#               xmodmap -e "keycode 65 = $spare_modifier"
+			#               xmodmap -e "remove mod4 = $spare_modifier"
+			#               # hyper_l is mod4 by default
+			#               xmodmap -e "add Control = $spare_modifier"
+			#
+			#        Next,  map  space  to an unused keycode
+			#        (to keep it around for xcape to use).
+			#
+			#               xmodmap -e "keycode any = space"
+			#
+			#        Finally use xcape to  cause  the  space
+			#        bar to generate a space when tapped.
+			#
+			#               xcape -e "$spare_modifier=space"
