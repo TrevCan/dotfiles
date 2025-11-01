@@ -30,7 +30,9 @@ exit
 #	xmodmap -e ""
 
 # map CapsLock key to Esc when released, Ctrl while pressed.
-	setxkbmap -option "ctrl:nocaps"
+# you must also map first CAPS LOCK -> ESC
+# you can use this	setxkbmap -option "ctrl:nocaps"
+# i already have it mapped out in my window manager (dwm)
 	xcape -e 'Control_L=Escape'
 
 
