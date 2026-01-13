@@ -1,0 +1,67 @@
+[pyprland]
+plugins = [
+  "expose",
+  "magnify",
+  #  "monitors",
+  #  "shift_monitors"
+]
+  #  "shift_monitors"
+#
+#
+
+
+# # regular horizontal setup
+# [monitors.placement."eDP-1"]
+# rate = 60
+# scale = 1.5
+# transform = 0
+# resolution = "1920x1080"
+# 
+# [monitors.placement."HDMI-A-2"]
+# rate = 60
+# scale = 1.5
+# transform = 0
+# resolution = "1920x1080"
+# leftEndOf = "eDP-1"
+# ######
+
+
+# vertical setup
+# [monitors.placement."eDP-1"]
+# rate = 60
+# scale = 1.5
+# transform = 0
+# resolution = "1920x1080"
+# 
+# [monitors.placement."HDMI-A-2"]
+# rate = 60
+# scale = 1.5
+# transform = 3
+# resolution = "1920x1080"
+# leftEndOf = "eDP-1"
+# 
+
+#
+## Optimized for retina-class 2x displays, like 13" 2.8K, 27" 5K, 32" 6K.
+#monitorv2 {
+#  env = GDK_SCALE,2
+#  output = eDP-1
+#  mode = preferred
+#  position = 1080x0
+#  #position is SCALED!
+#  scale = 1
+#  transform = 0
+##  monitor=,preferred,auto,auto
+#
+#}
+#
+#monitorv2 {
+#  env = GDK_SCALE,2.5
+#  output = HDMI-A-2
+#  mode = preferred
+#  #position is SCALED!
+#  position = 0x0
+#  scale = 1
+#  transform = 3
+#}
+#
