@@ -1,0 +1,28 @@
+#[ids]
+#
+#*
+
+[main]
+
+#map key held right hand
+j = lettermod(shift, j, 100, 150)
+k = lettermod(control, k, 100, 150)
+l = lettermod(meta, l, 100, 150)
+; = lettermod(alt, ;, 100, 150)
+
+#map key held left hand
+f = lettermod(shift, f, 100, 150)
+d = lettermod(control, d, 100, 150)
+s = lettermod(meta, s, 100, 150)
+a = lettermod(alt, a, 100, 150)
+
+h = lettermod(arrow, h, 100, 150)
+
+[arrow]
+
+w = up
+a = left
+s = down
+f = right
+q = pageup
+e = pagedown
