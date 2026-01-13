@@ -1,56 +1,14 @@
-# dotfiles
-TrevCan's config files. Below is an explanation on how anyone can set up their one repo.
+trevcan's Omarchy setup
 
-# Dependencies
-- [git](https://git-scm.com/downloads)
+Omarchy is a new bootstrapped linux system
+that uses wayland.
 
-# How to set up
-**Remember to back up your dotfiles to another location.**\
-You can set up a local repo first, then add the remote url but I recommend starting from the remote one.
-- [Remote](#Creating-the-remote-repo)
-- [Local](#local-repo)
+<https://omarchy.org/>
 
-## Local Repo
+It's relatively stable. Mine got broken for some reason.
+I'll try to save everything here before I reinstall it.
 
-### Create git repo
-In your `$HOME` directory run
-```bash
-git init --bare .files.git/
-```
+The configs I have are for:
 
-Where, `.files.git/` is where the git directory will be (this is different from the working tree. See below). A bare repo will not have a working directory by default. Let's add some aliases to set it up.
-
-### Set up aliases
-Add to your startup shell startup script (`.bashrc`, `.bash_aliases`, etc) the following:\
-```bash
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.files.git/ --work-tree=$HOME"
-```
-
-Where  `.files.git/` is your git directory. Now run your script:
-```bash
-source .bash_aliases
-```
-
-### Remove property show untracked files from git repo
-If you run `dotfiles status` you'll get a long list of all your untracked filesunder `$HOME`. If you don't want these files to be show, execute the following:
-```
-dotfiles config --local status.showUntrackedFiles no
-```
-
-Now, you can start adding and committing all the dotfiles you want to track under `$HOME`
-
-
-
-
-### Using with a remote repo
-From the server side, nothing fancy is needed. Just create a standard git repository.\
-Then clone it using the `--bare` flag and the `.files.git/` git directory.
-
-
-### Cloning
-Clone the repository using the
-
-## Where did you find out about this ? // Sources
-   [Harfang's Perch (2016)](https://harfangk.github.io/2016/09/18/manage-dotfiles-with-a-git-bare-repository.html)\
-   [Altassian (n.d.)](https://www.atlassian.com/git/tutorials/dotfiles)\
-   [StreakyCobra (Hacker News, 2016, "Ask HN: What do you use to manage dotfiles?")](https://news.ycombinator.com/item?id=11071754)
+- keyd: a tool for turning keys into modifier keys, e.g. turning
+the TAB key into the SUPER key, or setting up a homerow mod, etcetera.

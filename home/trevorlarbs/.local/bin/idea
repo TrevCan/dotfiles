@@ -1,3 +1,0 @@
-#!/bin/sh
-
-/home/trevorlarbs/Downloads/idea-IU-213.6777.52/bin/idea.sh $@

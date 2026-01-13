@@ -1,3 +1,0 @@
-#!/bin/zsh
-
-zsh -c "ssh trevor@trevcan.duckdns.org"
